@@ -1,6 +1,6 @@
 {
   "name": "pocket-ledger",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "一个面向大学生的本地优先开源桌面记账工具。",
   "main": "electron/main.js",
