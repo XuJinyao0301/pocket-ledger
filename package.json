@@ -1,0 +1,70 @@
+{
+  "name": "pocket-ledger",
+  "version": "0.1.0",
+  "private": true,
+  "description": "一个面向大学生的本地优先开源桌面记账工具。",
+  "main": "electron/main.js",
+  "author": "Open Source Contributors",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20 <26",
+    "npm": ">=10"
+  },
+  "scripts": {
+    "dev": "concurrently -k \"npm:dev:renderer\" \"npm:dev:electron\"",
+    "dev:renderer": "vite",
+    "dev:electron": "wait-on tcp:5173 && electron .",
+    "start": "electron .",
+    "build:web": "vite build",
+    "build": "vite build && electron-builder --publish never",
+    "build:dir": "vite build && electron-builder --dir --publish never"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.4",
+    "concurrently": "^9.1.2",
+    "electron": "^35.1.5",
+    "electron-builder": "^26.0.12",
+    "vite": "^7.0.3",
+    "wait-on": "^8.0.3"
+  },
+  "build": {
+    "appId": "top.studyxjy.pocketledger",
+    "productName": "PocketLedger",
+    "artifactName": "${productName}-${version}-${os}-${arch}.${ext}",
+    "asar": true,
+    "npmRebuild": false,
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "category": "Office"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

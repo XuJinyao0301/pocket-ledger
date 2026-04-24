@@ -1,0 +1,28 @@
+name: Feature Request
+description: Suggest an improvement for PocketLedger
+title: "[Feature] "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 你想解决什么问题
+      description: 先说问题，再说方案
+      placeholder: 例如：现在只能按自然月看生活费，但我希望按学期查看
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 你希望怎样改进
+      placeholder: 例如：增加一个学期视图...
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: 补充上下文
+      description: 可选，补充截图、使用场景、参考产品等

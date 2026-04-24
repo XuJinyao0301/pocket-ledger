@@ -1,0 +1,45 @@
+name: Bug Report
+description: Report a reproducible problem in PocketLedger
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: 问题描述
+      description: 简要描述你遇到的问题
+      placeholder: 例如：导出 JSON 后重新导入，部分交易没有显示
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 尽量提供稳定复现路径
+      placeholder: |
+        1. 打开应用
+        2. 点击...
+        3. 输入...
+        4. 看到异常...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期行为
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: 环境信息
+      placeholder: |
+        - OS:
+        - App version:
+        - 安装来源:
+    validations:
+      required: true
